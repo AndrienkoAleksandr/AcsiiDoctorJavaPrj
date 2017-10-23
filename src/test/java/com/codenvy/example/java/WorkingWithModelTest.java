@@ -1,6 +1,7 @@
 package com.codenvy.example.java;
 
 import org.asciidoctor.Asciidoctor;
+import org.asciidoctor.ast.ContentPart;
 import org.asciidoctor.ast.DocumentHeader;
 import org.asciidoctor.ast.StructuredDocument;
 import org.junit.Test;
@@ -33,18 +34,26 @@ public class WorkingWithModelTest {
     public void readHeader() {
         DocumentHeader header = asciidoctor.readDocumentHeader(ASCIIDOC_HEADER);
 
-        assertEquals(header.getDocumentTitle().getMain(), "Sample Document");
-        assertEquals(header.getAuthors().get(0).getFirstName(), "Doc");
-        assertEquals(header.getAuthors().get(0).getLastName(), "Writer");
+        assertEquals("Sample Document", header.getDocumentTitle().getMain());
+        assertEquals("Doc", header.getAuthors().get(0).getFirstName());
+        assertEquals("Writer", header.getAuthors().get(0).getLastName());
 
-        assertEquals(header.getRevisionInfo().getDate(), "2013-05-20");
-        assertEquals(header.getRevisionInfo().getNumber(), "1.0");
-        assertEquals(header.getRevisionInfo().getRemark(), "First draft");
+        assertEquals("2013-05-20", header.getRevisionInfo().getDate());
+        assertEquals("1.0", header.getRevisionInfo().getNumber());
+        assertEquals("First draft", header.getRevisionInfo().getRemark());
     }
 
-//    @Test
-//    public void readStructure() {
-//        StructuredDocument structuredDocument = asciidoctor.readDocumentStructure(ASCII_STRUCTURE, options().asMap());
-//        structuredDocument.
-//    }
+    @Test
+    public void readStructure() {
+        StructuredDocument structuredDocument = asciidoctor.readDocumentStructure(ASCII_STRUCTURE, options().asMap());
+        
+        ContentPart contentPart1 = structuredDocument.getParts().get(0);
+        ContentPart contentPart2 = structuredDocument.getParts().get(1);
+        
+        assertEquals("Section one", contentPart1.getTitle());
+        assertEquals("Section two", contentPart2.getTitle());
+        
+//        assertEquals("<div class=\"paragraph\"><p>This is content of section one</p></div>", contentPart1.getContent());
+//        assertEquals("And content of section two\n", contentPart2.getContent());
+    }
 }
