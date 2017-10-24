@@ -16,15 +16,6 @@ import static org.junit.Assert.fail;
 
 public class AsciiDoctorBaseUsageTest {
 
-    private static final String docContent = "Welcome to AsciiDocLIVE!\n" +
-            "------------------------\n" +
-            "\n" +
-            "AsciiDocLIVE is a *free online http://www.methods.co.nz/asciidoc/[AsciiDoc^]\n" +
-            "editor*.\n" +
-            "\n" +
-            "* Just type AsciiDoc source text into the *left* pane,\n" +
-            "* ...and the live preview appears in the *right* pane!";
-
     private Asciidoctor asciidoctor = create();
 
     @Test
