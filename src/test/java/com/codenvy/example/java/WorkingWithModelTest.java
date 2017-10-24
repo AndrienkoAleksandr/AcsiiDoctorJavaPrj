@@ -51,25 +51,25 @@ public class WorkingWithModelTest {
     public void shouldReadDocumentHeader() {
         DocumentHeader header = asciidoctor.readDocumentHeader(ASCII_DOC_HEADER);
 
-        assertEquals("Sample Document", header.getDocumentTitle().getMain());
-        assertEquals("Doc", header.getAuthors().get(0).getFirstName());
-        assertEquals("Writer", header.getAuthors().get(0).getLastName());
+        assertEquals(header.getDocumentTitle().getMain(), "Sample Document");
+        assertEquals(header.getAuthors().get(0).getFirstName(), "Doc");
+        assertEquals(header.getAuthors().get(0).getLastName(), "Writer");
 
-        assertEquals("2013-05-20", header.getRevisionInfo().getDate());
-        assertEquals("1.0", header.getRevisionInfo().getNumber());
-        assertEquals("First draft", header.getRevisionInfo().getRemark());
+        assertEquals(header.getRevisionInfo().getDate(), "2013-05-20");
+        assertEquals(header.getRevisionInfo().getNumber(), "1.0");
+        assertEquals(header.getRevisionInfo().getRemark(), "First draft");
     }
 
     @Test
     public void shouldReadStructure() {
         StructuredDocument structuredDocument = asciidoctor.readDocumentStructure(ASCII_STRUCTURE, options().asMap());
-        
+
         ContentPart contentPart1 = structuredDocument.getParts().get(0);
         ContentPart contentPart2 = structuredDocument.getParts().get(1);
-        
+
         assertEquals("Section one", contentPart1.getTitle());
         assertEquals("Section two", contentPart2.getTitle());
-        
+
         assertEquals("<div class=\"paragraph\">\n" +
                 "<p>This is content of section one</p>\n" +
                 "</div>", contentPart1.getContent());
