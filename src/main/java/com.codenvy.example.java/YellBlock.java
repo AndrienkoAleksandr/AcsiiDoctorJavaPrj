@@ -27,21 +27,4 @@ public class YellBlock extends BlockProcessor {
 
         return createBlock(parent, "paragraph", Collections.singletonList(upperLines.toString()), attributes, new HashMap<>());
     }
-
-//    @Override
-//    public Object process(AbstractBlock parent, Reader reader, Map<String, Object> attributes) {
-//        List<String> lines = reader.readLines();
-//        String upperLines = null;
-//        for (String line : lines) {
-//            if (upperLines == null) {
-//                upperLines = line.toUpperCase();
-//            }
-//            else {
-//                upperLines = upperLines + "\n" + line.toUpperCase();
-//            }
-//        }
-//
-//        return createBlock(parent, "paragraph", Arrays.asList(upperLines), attributes, new HashMap<Object, Object>());
-//    }
-
 }
