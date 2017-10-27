@@ -56,7 +56,7 @@ public class CheActionProcessorTest {
         String expectedContent = "<div class=\"sect1\">\n" +
                 "<h2 id=\"_che_action_processor\">Che action processor</h2>\n" +
                 "<div class=\"sectionbody\">\n" +
-                "<input type=\"button\" value=\"simple button\"/>\n" +
+                "<input type=\"button\" class=\"quick-guide-action\" value=\"simple button\"/>\n" +
                 "</div>\n" +
                 "</div>";
 

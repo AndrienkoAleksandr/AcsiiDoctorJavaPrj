@@ -13,7 +13,7 @@ public class CheActionProcessor extends BlockProcessor {
 
     @Override
     public Object process(StructuralNode parent, Reader reader, Map<String, Object> attributes) {
-        String content = "<input type=\"button\" value=\"simple button\"/>";
+        String content = "<input type=\"button\" class=\"quick-guide-action\" value=\"simple button\"/>";
         if (attributes.containsKey("che-action")) {
             System.out.println("yes");
         }
