@@ -9,7 +9,7 @@ import java.util.Map;
 
 import static java.util.Collections.singletonList;
 
-public class CheActionProcessor extends BlockProcessor {
+public class CheActionButtonProcessor extends BlockProcessor {
 
     @Override
     public Object process(StructuralNode parent, Reader reader, Map<String, Object> attributes) {

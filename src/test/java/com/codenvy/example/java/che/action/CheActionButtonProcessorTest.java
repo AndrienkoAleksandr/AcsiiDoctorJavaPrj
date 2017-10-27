@@ -10,7 +10,7 @@ import java.util.HashMap;
 import static org.asciidoctor.Asciidoctor.Factory.create;
 import static org.junit.Assert.assertEquals;
 
-public class CheActionProcessorTest {
+public class CheActionButtonProcessorTest {
 
     private static final String ASCII_DOC = "Che action processor\n" +
             "-------------------\n" +
@@ -48,7 +48,7 @@ public class CheActionProcessorTest {
     public void shouldParseContentWithTreeProcessor() {
         JavaExtensionRegistry extensionRegistry = this.asciidoctor.javaExtensionRegistry();
 
-        extensionRegistry.block("che-action", CheActionProcessor.class);
+        extensionRegistry.block("che-action", CheActionButtonProcessor.class);
 
         String content = asciidoctor.convert(ASCII_DOC, new Options());
 
