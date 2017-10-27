@@ -1,4 +1,4 @@
-package com.codenvy.example.java;
+package com.codenvy.example.java.processors;
 
 import org.asciidoctor.ast.ContentNode;
 import org.asciidoctor.extension.InlineMacroProcessor;

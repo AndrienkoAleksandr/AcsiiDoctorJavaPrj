@@ -1,5 +1,6 @@
-package com.codenvy.example.java;
+package com.codenvy.example.java.processors;
 
+import com.codenvy.example.java.processors.ChangeAttributeValuePreprocessor;
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.extension.JavaExtensionRegistry;
 import org.junit.Test;

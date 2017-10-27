@@ -1,4 +1,4 @@
-package com.codenvy.example.java;
+package com.codenvy.example.java.processors;
 
 import org.asciidoctor.ast.Block;
 import org.asciidoctor.ast.Document;

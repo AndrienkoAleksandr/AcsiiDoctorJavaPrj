@@ -1,5 +1,6 @@
 package com.codenvy.example.java;
 
+import com.codenvy.example.java.processors.YellBlock;
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.Options;
 import org.asciidoctor.extension.JavaExtensionRegistry;

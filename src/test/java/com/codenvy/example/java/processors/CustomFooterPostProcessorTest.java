@@ -1,5 +1,6 @@
-package com.codenvy.example.java;
+package com.codenvy.example.java.processors;
 
+import com.codenvy.example.java.processors.CustomFooterPostProcessor;
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.Options;
 import org.asciidoctor.extension.JavaExtensionRegistry;
