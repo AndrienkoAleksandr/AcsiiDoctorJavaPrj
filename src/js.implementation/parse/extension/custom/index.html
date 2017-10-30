@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the document</title>
+    <script src="../../../node_modules/asciidoctor.js/dist/asciidoctor.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../node_modules/asciidoctor.js/dist/css/asciidoctor.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+    <script>
+        function convert() {
+            var asciidoctor = Asciidoctor();
+
+            asciidoctor.Extensions.register(function () {
+                this.block(function () {
+                    const self = this;
+                    self.named('che-action');
+                    self.onContext('paragraph');
+                    self.process(function (parent, reader) {
+                        const content = "<input type=\"button\" class=\"quick-guide-action\" value=\"simple button\"/>";
+                        return self.createBlock(parent, 'pass', [content]);
+                    });
+                });
+            });
+
+            const text = "Try AsciiDoc\n" +
+                "------------\n" +
+                "\n" +
+                "There is _no reason_ to prefer http://daringfireball.net/projects/markdown/[Markdown]:\n" +
+                "it has *all the features*\n" +
+                "footnote:[See http://asciidoc.org/userguide.html[the user guide].]\n" +
+                "and more!\n" +
+                "\n" +
+                "Tasty styles\n" +
+                "~~~~~~~~~~~~\n" +
+                "[red]#Obvious# and [big red yellow-background]#very obvious#.\n" +
+                "[red]#Obvious# and [big red yellow-background]*very obvious*.\n" +
+                "[underline]#UnderLine text#, [overline]#overline text#\n" +
+                "[blue line-through]*bold blue and line throught* \"text\" 'text'\n" +
+                "\n" +
+                "__uncomnstained emphasized text__\n" +
+                "\n" +
+                "**unconstarined strong text**\n" +
+                "\n" +
+                "++unconstrained unquited text++\n" +
+                "\n" +
+                "##unconstrained unquoted text##\n" +
+                "\n" +
+                "**F**ile Open...\n" +
+                "\n" +
+                "e^&#960;^ + 1 = 0. H~2~O and x^10^. Some ^ super test^ and ~some sub text~\n" +
+                "\n" +
+                "Page will be breaked by \"<<<\"\n" +
+                "\n" +
+                "<<<\n" +
+                "\n" +
+                "And we want to have ruller in the html this a tag \"hr\"\n" +
+                "\n" +
+                "'''" +
+                "\n" +
+                "eight space for tab or only two?\n" +
+                "\n" +
+                "(C) copyright, (TM) trademark, (R) registered trademark,\n" +
+                "-- em dash, ... ellipsis, -> right arrow, <- left arrow, => right\n" +
+                "double arrow, <= left double arrow.\n" +
+                "\n" +
+                "Level One Section Title\n" +
+                "-----------------------\n" +
+                "Level 2 Subsection Title\n" +
+                "~~~~~~~~~~~~~~~~~~~~~~~~\n" +
+                "\n" +
+                "== Level One Section Title ==\n" +
+                "=== Level One Section Title ===\n" +
+                "\n" +
+                "[float]\n" +
+                "The second day\n" +
+                "~~~~~~~~~~~~~~\n" +
+                "\n" +
+                "Block titles\n" +
+                "~~~~~~~~~~~~\n" +
+                ".Notes\n" +
+                "- Note 1.\n" +
+                "- Note 2.\n" +
+                "\n" +
+                "[quote,'http://en.wikipedia.org/wiki/Samuel_Johnson[Samuel Johnson]']\n" +
+                "_____________________________________________________________________\n" +
+                "Sir, a woman's preaching is like a dog's walking on his hind legs. It\n" +
+                "is not done well; but you are surprised to find it done at all.\n" +
+                "_____________________________________________________________________\n" +
+                "\n" +
+                "== Some text ==\n" +
+                "Consul *necessitatibus* per id,\n" +
+                "consetetur, eu pro everti postulant\n" +
+                "homero verear ea mea, qui.\n" +
+                "\n" +
+                "== Some text ==\n" +
+                "[literal]\n" +
+                "Consul *necessitatibus* per id,\n" +
+                "consetetur, eu pro everti postulant\n" +
+                "homero verear ea mea, qui.\n" +
+                "\n" +
+                "[verse, William Blake, from Auguries of Innocence]\n" +
+                "To see a world in a grain of sand,\n" +
+                "And a heaven in a wild flower,\n" +
+                "Hold infinity in the palm of your hand,\n" +
+                "And eternity in an hour.\n" +
+                "\n" +
+                "[quote, Bertrand Russell, The World of Mathematics (1956)]\n" +
+                "A good notation has subtlety and suggestiveness which at times makes\n" +
+                "it almost seem like a live teacher.\n" +
+                "\n" +
+                "[NOTE]\n" +
+                "This is a simple note\n" +
+                "\n" +
+                "[WARNING]\n" +
+                "Be carefull!!\n" +
+                "\n" +
+                "[icons=None, caption=\"My Special Note\"]\n" +
+                "NOTE: This is my special note.\n" +
+                "--------------------------------------\n" +
+                "#include <stdio.h>\n" +
+                "int main() {\n" +
+                "printf(\"Hello World!\n\");\n" +
+                "    exit(0);\n" +
+                "}\n" +
+                "--------------------------------------\n" +
+                "...................................\n" +
+                "Consul *necessitatibus* per id,\n" +
+                "consetetur, eu pro everti postulant\n" +
+                "homero verear ea mea, qui.\n" +
+                "...................................\n" +
+                "\n" +
+                ".An Example Sidebar\n" +
+                "************************************************\n" +
+                "Any AsciiDoc SectionBody element (apart from\n" +
+                "SidebarBlocks) can be placed inside a sidebar.\n" +
+                "************************************************\n" +
+                "\n" +
+                "//////////////////////////////////////////\n" +
+                "CommentBlock contents are not processed by\n" +
+                "asciidoc(1).\n" +
+                "//////////////////////////////////////////\n" +
+                "[subs=\"quotes\"]\n" +
+                "++++++++++++++++++++++++++++++++++++++\n" +
+                "<table border=\"1\"><tr>\n" +
+                " <td>*Cell 1*</td>\n" +
+                "<td>*Cell 2*</td>\n" +
+                "</tr></table>\n" +
+                "++++++++++++++++++++++++++++++++++++++\n" +
+                "\n" +
+                "[che-action, \"Open file in the line 30\", \"open-file\"]\n" +
+                "++++++++++++++++++++++++++++++++++++++++++\n" +
+                "<input type=\"button\" value=\"Your button\" style=\"color:red\"/>\n" +
+                "++++++++++++++++++++++++++++++++++++++++++\n" +
+                "\n" +
+                "[che-action, \"Open file in the line 30\", \"open-file\"]\n" +
+                "++++++++++++++++++++++++++++++++++++++++++\n" +
+                "<input type=\"button\" value=\"simple button\"/>\n" +
+                "++++++++++++++++++++++++++++++++++++++++++\n" +
+                "\n" +
+                "[che-action]\n" +
+                "id::open-file\n" +
+                "label::Open Test.java in the line 30\n" +
+                "path::/prj/src/main/java/Test.java\n" +
+                "line::30\n" +
+                "\n" +
+                "There is _no reason_ to prefer http://daringfireball.net/projects/markdown/[Markdown]:\n" +
+                "it has *all the features*\n" +
+                "footnote:[See http://asciidoc.org/userguide.html[the user guide].]\n" +
+                "and more!\n" +
+                "\n" +
+                "Tasty styles\n" +
+                "~~~~~~~~~~~~\n" +
+                "[red]#Obvious# and [big red yellow-background]#very obvious#.\n" +
+                "[red]#Obvious# and [big red yellow-background]*very obvious*.\n" +
+                "[underline]#UnderLine text#, [overline]#overline text#\n" +
+                "[blue line-through]*bold blue and line throught* \"text\" 'text'\n" +
+                "\n" +
+                "__uncomnstained emphasized text__\n" +
+                "\n" +
+                "**unconstarined strong text**\n" +
+                "\n" +
+                "++unconstrained unquited text++\n" +
+                "\n" +
+                "##unconstrained unquoted text##\n" +
+                "\n" +
+                "**F**ile Open...\n" +
+                "\n" +
+                "e^&#960;^ + 1 = 0. H~2~O and x^10^. Some ^ super test^ and ~some sub text~\n" +
+                "\n" +
+                "Page will be breaked by \"<<<\"\n" +
+                "\n" +
+                "<<<\n" +
+                "\n" +
+                "And we want to have ruller in the html this a tag \"hr\"\n" +
+                "\n" +
+                "'''\n" +
+                "\n" +
+                "eight space for tab or only two?\n" +
+                "\n" +
+                "(C) copyright, (TM) trademark, (R) registered trademark,\n" +
+                "-- em dash, ... ellipsis, -> right arrow, <- left arrow, => right\n" +
+                "double arrow, <= left double arrow.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "    Level One Section Title\n" +
+                "-----------------------\n" +
+                "    Level 2 Subsection Title\n" +
+                "~~~~~~~~~~~~~~~~~~~~~~~~\n" +
+                "\n" +
+                " = Level One Section Title =\n" +
+                "\n" +
+                "== Level One Section Title ==\n" +
+                "=== Level One Section Title ===\n" +
+                "\n" +
+                "[float]\n" +
+                "The second day\n" +
+                "~~~~~~~~~~~~~~\n" +
+                "\n" +
+                "Block titles\n" +
+                "~~~~~~~~~~~~\n" +
+                ".Notes\n" +
+                "- Note 1.\n" +
+                "- Note 2.\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "    [quote,'http://en.wikipedia.org/wiki/Samuel_Johnson[Samuel Johnson]']\n" +
+                "_____________________________________________________________________\n" +
+                "Sir, a woman's preaching is like a dog's walking on his hind legs. It\n" +
+                "is not done well; but you are surprised to find it done at all.\n" +
+                "_____________________________________________________________________\n" +
+                "\n" +
+                "== Some text ==\n" +
+                "Consul *necessitatibus* per id,\n" +
+                "consetetur, eu pro everti postulant\n" +
+                "homero verear ea mea, qui.\n" +
+                "\n" +
+                "== Some text ==\n" +
+                "[literal]\n" +
+                "Consul *necessitatibus* per id,\n" +
+                "consetetur, eu pro everti postulant\n" +
+                "homero verear ea mea, qui.\n" +
+                "\n" +
+                "[verse, William Blake, from Auguries of Innocence]\n" +
+                "To see a world in a grain of sand,\n" +
+                "And a heaven in a wild flower,\n" +
+                "Hold infinity in the palm of your hand,\n" +
+                "And eternity in an hour.\n" +
+                "\n" +
+                "[quote, Bertrand Russell, The World of Mathematics (1956)]\n" +
+                "A good notation has subtlety and suggestiveness which at times makes\n" +
+                "it almost seem like a live teacher.\n" +
+                "\n" +
+                "[NOTE]\n" +
+                "This is a simple note\n" +
+                "\n" +
+                "[WARNING]\n" +
+                "Be carefull!!\n" +
+                "\n" +
+                "\n" +
+                "[icons=None, caption=\"My Special Note\"]\n" +
+                "NOTE: This is my special note.\n" +
+                "\n" +
+                "\n" +
+                "--------------------------------------\n" +
+                "#include <stdio.h>\n" +
+                "\n" +
+                "int main() {\n" +
+                "printf(\"Hello World!\n\");\n" +
+                "exit(0);\n" +
+                "}\n" +
+                "--------------------------------------\n" +
+                "\n" +
+                "...................................\n" +
+                "Consul *necessitatibus* per id,\n" +
+                "consetetur, eu pro everti postulant\n" +
+                "homero verear ea mea, qui.\n" +
+                "...................................\n" +
+                "\n" +
+                ".An Example Sidebar\n" +
+                "************************************************\n" +
+                "Any AsciiDoc SectionBody element (apart from\n" +
+                "SidebarBlocks) can be placed inside a sidebar.\n" +
+                "************************************************\n" +
+                "\n" +
+                "//////////////////////////////////////////\n" +
+                "CommentBlock contents are not processed by\n" +
+                "asciidoc(1).\n" +
+                "//////////////////////////////////////////\n" +
+                "\n" +
+                "[subs=\"quotes\"]\n" +
+                "++++++++++++++++++++++++++++++++++++++\n" +
+                "<table border=\"1\"><tr>\n" +
+                "<td>*Cell 1*</td>\n" +
+                "<td>*Cell 2*</td>\n" +
+                "</tr></table>\n" +
+                "++++++++++++++++++++++++++++++++++++++\n" +
+                "\n" +
+                "[che-action, \"Open file in the line 30\", \"open-file\"]\n" +
+                "++++++++++++++++++++++++++++++++++++++++++\n" +
+                "<input type=\"button\" value=\"Your button\" style=\"color:red\"/>\n" +
+                "++++++++++++++++++++++++++++++++++++++++++\n" +
+                "\n" +
+                "[che-action, \"Open file in the line 30\", \"open-file\"]\n" +
+                "++++++++++++++++++++++++++++++++++++++++++\n" +
+                "<input type=\"button\" value=\"simple button\"/>\n" +
+                "++++++++++++++++++++++++++++++++++++++++++\n" +
+                "\n" +
+                "Try AsciiDoc\n" +
+                "------------\n" +
+                "\n" +
+                "There is _no reason_ to prefer http://daringfireball.net/projects/markdown/[Markdown]:\n" +
+                "it has *all the features*\n" +
+                "footnote:[See http://asciidoc.org/userguide.html[the user guide].]\n" +
+                "and more!\n" +
+                "\n" +
+                "NOTE: Great projects use it, including Git, WeeChat and Pacman!\n" +
+                "\n" +
+                "=== Comparison\n" +
+                "\n" +
+                ".Snippets of markup footnote:[More snippets in http://powerman.name/doc/asciidoc[the cheatsheet]]\n" +
+                "[cols=\",2*<\"]\n" +
+                "|===\n" +
+                ".3+^.^s| Link |AsciiDoc |`http://example.com[Dummy]`\n" +
+                "|Markdown |`[Dummy](http://example.com)`\n" +
+                "|Textile |`\"Dummy\":http://example.com`\n" +
+                "\n" +
+                ".3+^.^s| Face |AsciiDoc |`Either *bold* or _italic_`\n" +
+                "|Markdown |`Either **bold** or *italic*`\n" +
+                "|Textile  |`Either *bold* or _italic_`\n" +
+                "\n" +
+                ".3+^.^s| Header |AsciiDoc |`== Level 2 ==`\n" +
+                "|Markdown |`## Level 2`\n" +
+                "|Textile  |`h2.  Level 2`\n" +
+                "|===\n" +
+                "\n" +
+                "=== Ruby code to render AsciiDoc\n" +
+                "\n" +
+                "[source,ruby]\n" +
+                "----\n" +
+                "require 'asciidoctor'  # <1>\n" +
+                "\n" +
+                "puts Asciidoctor.render_file('sample.adoc', :header_footer => true)  # <2>\n" +
+                "----\n" +
+                "<1> Imports the library'\n" +
+                "<2> Reads, parses and renders the file\n" +
+                "And here is some silly math:\n" +
+                "e^πi^ + 1 = 0 and H~2~O.\n" +
+                "Che action processor\n" +
+                "-------------------\n" +
+                "[che-action]\n" +
+                "id::open-file\n" +
+                "label::Open Test.java in the line 30\n" +
+                "path::/prj/src/main/java/Test.java\n" +
+                "line::30\n";
+
+            const html = asciidoctor.convert(text);
+            console.log(html);
+
+            document.getElementById("content").innerHTML = html;
+        }
+    </script>
+</head>
+<body onload="convert();">
+    <div id="content"></div>
+</body>
+</html>

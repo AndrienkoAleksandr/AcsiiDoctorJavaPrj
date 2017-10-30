@@ -30,13 +30,11 @@ public class CheActionButtonProcessorTest {
         String expectedOutPut = "<div class=\"sect1\">\n" +
                 "<h2 id=\"_che_action_processor\">Che action processor</h2>\n" +
                 "<div class=\"sectionbody\">\n" +
-                "<div class=\"literalblock\">\n" +
-                "<div class=\"content\">\n" +
-                "<pre> id::open-file\n" +
+                "<div class=\"paragraph\">\n" +
+                "<p>id::open-file\n" +
                 "label::Open Test.java in the line 30\n" +
                 "path::/prj/src/main/java/Test.java\n" +
-                "line::30</pre>\n" +
-                "</div>\n" +
+                "line::30</p>\n" +
                 "</div>\n" +
                 "</div>\n" +
                 "</div>";

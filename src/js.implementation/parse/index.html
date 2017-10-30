@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the document</title>
+    <script src="../node_modules/asciidoctor.js/dist/asciidoctor.js"></script>
+    <script>
+        function convert() {
+            var asciidoctor = Asciidoctor();
+            var content = "http://asciidoctor.org[*Asciidoctor*] " +
+                "running on http://opalrb.org[_Opal_] " +
+                "brings AsciiDoc to the browser!";
+            var html = asciidoctor.convert(content);
+            console.log(html);
+
+            document.getElementById("asciidoc").innerHTML = content;
+            document.getElementById("content").innerHTML = html;
+        }
+    </script>
+</head>
+<body onload="convert();">
+    <h5>Asiidoc</h5>
+    <div id="asciidoc"></div>
+    <h5>Parse result</h5>
+    <div id="content"></div>
+</body>
+</html>

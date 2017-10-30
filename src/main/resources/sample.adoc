@@ -146,6 +146,169 @@ asciidoc(1).
 </tr></table>
 ++++++++++++++++++++++++++++++++++++++
 
+[che-action, "Open file in the line 30", "open-file"]
+++++++++++++++++++++++++++++++++++++++++++
+<input type="button" value="Your button" style="color:red"/>
+++++++++++++++++++++++++++++++++++++++++++
+
+[che-action, "Open file in the line 30", "open-file"]
+++++++++++++++++++++++++++++++++++++++++++
+<input type="button" value="simple button"/>
+++++++++++++++++++++++++++++++++++++++++++
+
+
+[che-action]
+id::open-file
+label::Open Test.java in the line 30
+path::/prj/src/main/java/Test.java
+line::30
+
+There is _no reason_ to prefer http://daringfireball.net/projects/markdown/[Markdown]:
+it has *all the features*
+footnote:[See http://asciidoc.org/userguide.html[the user guide].]
+and more!
+
+Tasty styles
+~~~~~~~~~~~~
+[red]#Obvious# and [big red yellow-background]#very obvious#.
+[red]#Obvious# and [big red yellow-background]*very obvious*.
+[underline]#UnderLine text#, [overline]#overline text#
+[blue line-through]*bold blue and line throught* "text" \'text'
+
+__uncomnstained emphasized text__
+
+**unconstarined strong text**
+
+++unconstrained unquited text++
+
+##unconstrained unquoted text##
+
+**F**ile Open...
+
+e^&#960;^ + 1 = 0. H~2~O and x^10^. Some ^ super test^ and ~some sub text~
+
+Page will be breaked by "<<<"
+
+<<<
+
+And we want to have ruller in the html this a tag "hr"
+
+'''
+
+  eight space for tab or only two?
+
+(C) copyright, (TM) trademark, (R) registered trademark,
+-- em dash, ... ellipsis, -> right arrow, <- left arrow, => right
+double arrow, <= left double arrow.
+
+
+
+Level One Section Title
+-----------------------
+Level 2 Subsection Title
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+= Level One Section Title =
+
+== Level One Section Title ==
+=== Level One Section Title ===
+
+[float]
+The second day
+~~~~~~~~~~~~~~
+
+Block titles
+~~~~~~~~~~~~
+.Notes
+ - Note 1.
+ - Note 2.
+
+
+
+[quote,'http://en.wikipedia.org/wiki/Samuel_Johnson[Samuel Johnson]']
+_____________________________________________________________________
+Sir, a woman's preaching is like a dog's walking on his hind legs. It
+is not done well; but you are surprised to find it done at all.
+_____________________________________________________________________
+
+
+
+
+
+
+== Some text ==
+ Consul *necessitatibus* per id,
+ consetetur, eu pro everti postulant
+ homero verear ea mea, qui.
+
+== Some text ==
+[literal]
+Consul *necessitatibus* per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.
+
+[verse, William Blake, from Auguries of Innocence]
+  To see a world in a grain of sand,
+  And a heaven in a wild flower,
+  Hold infinity in the palm of your hand,
+  And eternity in an hour.
+
+
+[quote, Bertrand Russell, The World of Mathematics (1956)]
+A good notation has subtlety and suggestiveness which at times makes
+it almost seem like a live teacher.
+
+
+[NOTE]
+This is a simple note
+
+[WARNING]
+Be carefull!!
+
+
+[icons=None, caption="My Special Note"]
+NOTE: This is my special note.
+
+
+--------------------------------------
+#include <stdio.h>
+
+int main() {
+   printf("Hello World!\n");
+   exit(0);
+}
+--------------------------------------
+
+
+
+...................................
+Consul *necessitatibus* per id,
+consetetur, eu pro everti postulant
+homero verear ea mea, qui.
+...................................
+
+
+.An Example Sidebar
+************************************************
+Any AsciiDoc SectionBody element (apart from
+SidebarBlocks) can be placed inside a sidebar.
+************************************************
+
+
+//////////////////////////////////////////
+CommentBlock contents are not processed by
+asciidoc(1).
+//////////////////////////////////////////
+
+
+[subs="quotes"]
+++++++++++++++++++++++++++++++++++++++
+<table border="1"><tr>
+  <td>*Cell 1*</td>
+  <td>*Cell 2*</td>
+</tr></table>
+++++++++++++++++++++++++++++++++++++++
+
 
 [che-action, "Open file in the line 30", "open-file"]
 ++++++++++++++++++++++++++++++++++++++++++
@@ -160,15 +323,55 @@ asciidoc(1).
 ++++++++++++++++++++++++++++++++++++++++++
 
 
+Try AsciiDoc
+------------
+
+There is _no reason_ to prefer http://daringfireball.net/projects/markdown/[Markdown]:
+it has *all the features*
+footnote:[See http://asciidoc.org/userguide.html[the user guide].]
+and more!
+
+NOTE: Great projects use it, including Git, WeeChat and Pacman!
+
+=== Comparison
+
+.Snippets of markup footnote:[More snippets in http://powerman.name/doc/asciidoc[the cheatsheet]]
+[cols=",2*<"]
+|===
+.3+^.^s| Link |AsciiDoc |`http://example.com[Dummy]`
+              |Markdown |`[Dummy](http://example.com)`
+              |Textile |`"Dummy":http://example.com`
+
+.3+^.^s| Face |AsciiDoc |`Either *bold* or _italic_`
+              |Markdown |`Either **bold** or *italic*`
+ |Textile  |`Either *bold* or _italic_`
+
+.3+^.^s| Header |AsciiDoc |`== Level 2 ==`
+                |Markdown |`## Level 2`
+                |Textile  |`h2.  Level 2`
+|===
+
+=== Ruby code to render AsciiDoc
+
+[source,ruby]
+----
+require 'asciidoctor'  # <1>
+
+puts Asciidoctor.render_file('sample.adoc', :header_footer => true)  # <2>
+----
+<1> Imports the library
+<2> Reads, parses and renders the file
+
+
+And here is some silly math:
+e^πi^ + 1 = 0 and H~2~O.
 
 
 
-
+Che action processor
+-------------------
 [che-action]
-______________________________________
-
 id::open-file
 label::Open Test.java in the line 30
 path::/prj/src/main/java/Test.java
 line::30
-______________________________________
