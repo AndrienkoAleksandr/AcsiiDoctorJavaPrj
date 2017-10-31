@@ -20,17 +20,16 @@ public class Application {
         if (adocUrl != null) {
             File adocFile = new File(adocUrl.getFile());
             if (adocFile.exists()) {
-                String outPut = asciidoctor.convertFile(adocFile, new HashMap<>());
-
                 String content = new String(Files.readAllBytes(adocFile.toPath()));
 
                 long begin = System.currentTimeMillis();
+
                 asciidoctor.convert(content, new HashMap<>());
+
                 long timeDiff = System.currentTimeMillis() - begin;
+
                 System.out.println(timeDiff);
             }
-
         }
     }
-
 }
