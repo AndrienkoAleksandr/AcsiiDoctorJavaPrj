@@ -146,22 +146,18 @@ asciidoc(1).
 </tr></table>
 ++++++++++++++++++++++++++++++++++++++
 
-[che-action, "Open file in the line 30", "open-file"]
+action:open-file[label="Some text", line=33, path="/Some/ file"]
 ++++++++++++++++++++++++++++++++++++++++++
 <input type="button" value="Your button" style="color:red"/>
 ++++++++++++++++++++++++++++++++++++++++++
 
-[che-action, "Open file in the line 30", "open-file"]
+action:open-file[label="Some text", line=33, path="/Some/ file"]
 ++++++++++++++++++++++++++++++++++++++++++
 <input type="button" value="simple button"/>
 ++++++++++++++++++++++++++++++++++++++++++
 
 
-[che-action]
-id::open-file
-label::Open Test.java in the line 30
-path::/prj/src/main/java/Test.java
-line::30
+action:open-file[label="Some text", line=33, path="/Some/ file"]
 
 There is _no reason_ to prefer http://daringfireball.net/projects/markdown/[Markdown]:
 it has *all the features*
@@ -310,14 +306,14 @@ asciidoc(1).
 ++++++++++++++++++++++++++++++++++++++
 
 
-[che-action, "Open file in the line 30", "open-file"]
+action:open-file[label="Some text", line=33, path="/Some/ file"]
 ++++++++++++++++++++++++++++++++++++++++++
 <input type="button" value="Your button" style="color:red"/>
 ++++++++++++++++++++++++++++++++++++++++++
 
 
 
-[che-action, "Open file in the line 30", "open-file"]
+action:open-file[label="Some text", line=33, path="/Some/ file"]
 ++++++++++++++++++++++++++++++++++++++++++
 <input type="button" value="simple button"/>
 ++++++++++++++++++++++++++++++++++++++++++
@@ -370,15 +366,7 @@ e^πi^ + 1 = 0 and H~2~O.
 
 Che action processor
 -------------------
-[che-action]
-id::open-file
-label::Open Test.java in the line 30
-path::/prj/src/main/java/Test.java
-line::30
+action:open-file[label="Some text", line=33, path="/Some/ file"]
 
 
-[che-action]
-id::open-file
-label::Open Test.java in the line 30
-path::/prj/src/main/java/Test.java
-line::30
+action:open-file[label="Some text", line=33, path="/Some/ file"]
