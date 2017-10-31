@@ -15,7 +15,7 @@ public class CheActionButtonProcessor2Test {
     private static final String ASCII_DOC = "Try AsciiDoc\n" +
             "------------\n" +
             "\n" +
-            "[action type=openFile path=/path/to/file scroll=23 highlight=23:25]\n";
+            "action::[action type=openFile path=/path/to/file scroll=23 highlight=23:25]\n";
 
     private Asciidoctor asciidoctor = create();
 
@@ -35,16 +35,15 @@ public class CheActionButtonProcessor2Test {
 
     @Test
     public void shouldParseContentWithTreeProcessor() {
+        JavaExtensionRegistry extensionRegistry = this.asciidoctor.javaExtensionRegistry();
 
-//        JavaExtensionRegistry extensionRegistry = this.asciidoctor.javaExtensionRegistry();
-//
-//        extensionRegistry.block("action", CheActionButtonProcessor2.class);
-//
-//        String content = asciidoctor.convert(ASCII_DOC, new Options());
-//
-//        System.out.println(content);
-//        String expectedContent = "";
-//
-//        assertEquals(expectedContent, content);
+        extensionRegistry.blockMacro("action", CheActionButtonProcessor2.class);
+
+        String content = asciidoctor.convert(ASCII_DOC, new Options());
+
+        System.out.println(content);
+        String expectedContent = "";
+
+        assertEquals(expectedContent, content);
     }
 }

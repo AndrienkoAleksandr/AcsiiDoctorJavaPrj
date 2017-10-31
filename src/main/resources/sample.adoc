@@ -375,3 +375,10 @@ id::open-file
 label::Open Test.java in the line 30
 path::/prj/src/main/java/Test.java
 line::30
+
+
+[che-action]
+id::open-file
+label::Open Test.java in the line 30
+path::/prj/src/main/java/Test.java
+line::30

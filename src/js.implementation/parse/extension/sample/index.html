@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title of the document</title>
-    <script src="../../../node_modules/asciidoctor.js/dist/asciidoctor.js"></script>
+    <script src="../../../../../node_modules/asciidoctor.js/dist/asciidoctor.js"></script>
     <script>
         function convert() {
             var asciidoctor = Asciidoctor();
@@ -12,15 +12,16 @@
                this.block(function () {
                    const self = this;
                    self.named('shout');
-                   self.onContext('paragraph');
+                   self.onContext('attribute');
                    self.process(function (parent, reader) {
+                       console.log('go')
                        const lines = reader.getLines().map(function (l) { return l.toUpperCase(); });
                        return self.createBlock(parent, 'paragraph', lines);
                    });
                });
             });
 
-            const text = "[shout]" + "\nSay it loud." + "\nSay it proud.";
+            const text = "[shout]trr";
 
             const html = asciidoctor.convert(text);
             console.log(html);
