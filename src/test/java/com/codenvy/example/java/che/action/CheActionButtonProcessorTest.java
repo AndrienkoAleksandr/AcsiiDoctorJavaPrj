@@ -191,7 +191,7 @@ public class CheActionButtonProcessorTest {
     }
 
     @Test
-    public void shouldBeParseInsideQuestionAnswerList() {
+    public void shouldBeParseActionInsideQuestionAnswerList() {
         String content = asciiDoctorWithExtension.convert(ASCII_DOC4, new Options());
 
         String expectedContent = "<div class=\"qlist qanda\">\n" +
