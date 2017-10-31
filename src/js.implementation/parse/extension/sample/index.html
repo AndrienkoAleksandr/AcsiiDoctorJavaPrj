@@ -14,7 +14,6 @@
                    self.named('shout');
                    self.onContext('attribute');
                    self.process(function (parent, reader) {
-                       console.log('go')
                        const lines = reader.getLines().map(function (l) { return l.toUpperCase(); });
                        return self.createBlock(parent, 'paragraph', lines);
                    });

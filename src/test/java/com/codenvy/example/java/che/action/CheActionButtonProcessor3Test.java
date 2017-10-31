@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CheActionButtonProcessor3Test {
     private static final String ASCII_DOC = "In::\n" +
-            "action:open-file[label=\"Some text\", line=33, path=\"/Some/ file\"]::\n" +
+            "action:open-file[label=\"Some text\", line=33, path=\"/Some/ file\"]   ::\n" +
             "  Fusce euismod commodo velit.\n" +
             "\n" +
             "  Fusce euismod commodo velit.\n" +

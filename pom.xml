@@ -34,6 +34,12 @@
             <version>1.7.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.eclipse.che.core</groupId>
+            <artifactId>che-core-api-factory-shared</artifactId>
+            <version>5.19.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -55,6 +61,31 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>codenvy-public-repo</id>
+            <name>codenvy public</name>
+            <url>https://maven.codenvycorp.com/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>codenvy-public-snapshots-repo</id>
+            <name>codenvy public snapshots</name>
+            <url>https://maven.codenvycorp.com/content/repositories/codenvy-public-snapshots/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>codenvy-public-repo</id>
+            <name>codenvy public</name>
+            <url>https://maven.codenvycorp.com/content/groups/public/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>codenvy-public-snapshots-repo</id>
+            <name>codenvy public snapshots</name>
+            <url>https://maven.codenvycorp.com/content/repositories/codenvy-public-snapshots/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 
 </project>
