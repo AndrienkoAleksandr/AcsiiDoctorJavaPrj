@@ -3,47 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title of the document</title>
-    <script src="../../../../../node_modules/asciidoctor.js/dist/asciidoctor.js"></script>
+    <script src="main.js"></script>
+    <script src="ext-res/js/asciidoctor.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="ext-res/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css">
 
-    <link rel="stylesheet" type="text/css" href="../../../../../node_modules/asciidoctor.js/dist/css/asciidoctor.css">
+    <link rel="stylesheet" type="text/css" href="ext-res/css/asciidoctor.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-    <script>
-        function convert() {
-            var asciidoctor = Asciidoctor();
-
-            asciidoctor.Extensions.register(function () {
-                this.block(function () {
-                    const self = this;
-                    self.named('che-action');
-                    self.onContext('paragraph');
-                    self.process(function (parent, reader) {
-                        const content = "<input type=\"button\" class=\"quick-guide-action\" value=\"guide che action button\"/>";
-                        return self.createBlock(parent, 'pass', [content]);
-                    });
-                });
-            });
-
-            fetch('/static/sample.adoc', {method: 'GET'}).then(function (res) {
-                res.text().then(function (text) {
-                    var begin = new Date().getTime();
-
-                    const html = asciidoctor.convert(text);
-
-                    var timeDiff = new Date().getTime() - begin;
-
-                    console.log(timeDiff);
-
-
-                    document.getElementById("content").innerHTML = html;
-                });
-            });
-        }
-    </script>
 </head>
 <body onload="convert();">
-    <div id="content"></div>
+    <div class="container full-height">
+        <div class="row full-height">
+            <div class="col-xs-6 full-height">
+                <div class="demo-control"><a href="#" class="source-clear">clear</a><a id="permalink" href="./" title="Share this snippet as link"><strong>permalink</strong></a></div>
+                <textarea id="content-widget" class="source full-height">---
+   __CHE actions syntax inside asciidoc__
+
+                </textarea>
+            </div>
+            <section class="col-xs-6 full-height">
+                <div class="demo-control"><a href="#" data-result-as="html">html</a><a href="#" data-result-as="src">source</a><a href="#" data-result-as="debug">debug</a></div>
+                <div id="result-container" class="result-html full-height"></div>
+                <pre class="hljs result-src full-height"><code class="result-src-content full-height"></code></pre>
+                <pre class="hljs result-debug full-height"><code class="result-debug-content full-height"></code></pre>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
