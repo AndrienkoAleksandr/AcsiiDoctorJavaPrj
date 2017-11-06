@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title of the document</title>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
     <script src="ext-res/js/asciidoctor.js"></script>
 
     <link rel="stylesheet" type="text/css" href="ext-res/css/index.css">
@@ -17,8 +17,12 @@
         <div class="row full-height">
             <div class="col-xs-6 full-height">
                 <div class="demo-control"><a href="#" class="source-clear">clear</a><a id="permalink" href="./" title="Share this snippet as link"><strong>permalink</strong></a></div>
-                <textarea id="content-widget" class="source full-height">---
-   __CHE actions syntax inside asciidoc__
+                <textarea id="content-widget" class="source full-height">
+   CHE actions syntax inside asciidoc
+   ----------------------------------
+
+   ~~~Test~~~
+   action:open-file[label="Open some file", line=33, path="/path/to/file"]
 
                 </textarea>
             </div>

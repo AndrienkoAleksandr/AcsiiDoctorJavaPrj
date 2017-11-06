@@ -6,7 +6,7 @@ function convert() {
     asciidoctor.Extensions.register(function () {
         this.block(function () {
             const self = this;
-            self.named('che-action');
+            self.named('action');
             self.onContext('paragraph');
             self.process(function (parent, reader) {
                 const content = "<input type=\"button\" class=\"quick-guide-action\" value=\"guide che action button\"/>";
@@ -15,7 +15,7 @@ function convert() {
         });
     });
 
-    var text =
+    var text = document.getElementById("content-widget").innerHTML;
 
     var begin = new Date().getTime();
 
@@ -25,7 +25,5 @@ function convert() {
 
     console.log(timeDiff);
 
-    document.getElementById("content").innerHTML = html;
-
-
+    document.getElementById("result-container").innerHTML = html;
 }
