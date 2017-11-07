@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title of the document</title>
+    <script src="./main.js"></script>
+    <script src="ext-res/js/asciidoctor.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="ext-res/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" href="ext-res/css/asciidoctor.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+</head>
+<body onload="convert();">
+<div class="container full-height">
+    <div class="row full-height">
+        <div class="col-xs-6 full-height">
+            <div class="demo-control"><a href="#" class="source-clear">clear</a><a id="permalink" href="./" title="Share this snippet as link"><strong>permalink</strong></a></div>
+            <textarea id="content-widget" class="source full-height">---
+__CHE actions syntax inside markdown__
+
+---
+
+# h1 che:action[id="open-file" label="Action", line=33, path="/path"] Heading 8-)
+## h2 che:action[id="open-file" label="Action", line=33, path="/path"] Heading
+### h3 che:action[id="open-file" label="Action", line=33, path="/path"] Heading
+#### h4 che:action[id="open-file" label="Action", line=33, path="/path"] Heading
+##### h5 che:action[id="open-file" label="Action", line=33, path="/path"] Heading
+###### h6 che:action[id="open-file" label="Action", line=33, path="/path"] Heading
+che:action[id="open-file" label="Action", line=33, path="/path"]
+
+
+## Horizontal Rules che:action[id="open-file" label="Action", line=33, path="/path"]
+
+___
+
+---
+
+***
+
+
+## Typographic replacements
+
+Enable typographer option to see result.
+
+(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+
+test.. test... test..... test?..... test!....
+
+!!!!!! ???? ,,  -- ---
+
+&quot;Smartypants, che:action[id="open-file" label="Action", line=33, path="/path"] double quotes&quot; and 'single quotes'
+
+
+## Emphasis
+
+**This is bold text che:action[id="open-file" label="Action", line=33, path="/path"]**
+
+__This is bold che:action[id="open-file" label="Action", line=33, path="/path"] text__
+
+*This is italic text che:action[id="open-file" label="Action", line=33, path="/path"]*
+
+_This is italic text che:action[id="open-file" label="Action", line=33, path="/path"]_
+
+~~Strikethrough che:action[id="open-file" label="Action", line=33, path="/path"]~~
+
+
+## Blockquotes
+
+
+&gt; Blockquotes can also be nested che:action[id="open-file" label="Action", line=33, path="/path"]...
+&gt;&gt; ...by using additional greater-than signs right next to each che:action[id="open-file" label="Action", line=33, path="/path"] other...
+&gt; &gt; &gt; ...or with spaces between arrows che:action[id="open-file" label="Action", line=33, path="/path"].
+
+
+## Lists
+
+Unordered
+
++ Create a list by che:action[id="open-file" label="Action", line=33, path="/path"] starting a line with `+`, `-`, or `*`
++ Sub-lists are made by indenting 2 spaces:
+  - Marker character che:action[id="open-file" label="Action", line=33, path="/path"] change forces new list start:
+    * Ac tristique che:action[id="open-file" label="Action", line=33, path="/path"] libero volutpat at
+    + Facilisis in pretium nisl aliquet che:action[id="open-file" label="Action", line=33, path="/path"]
+    - che:action[id="open-file" label="Action", line=33, path="/path"]Nulla volutpat aliquam velit
++ Very easy che:action[id="open-file" label="Action", line=33, path="/path"]!
+
+Ordered
+
+1. Lorem ipsum dolor sit amet che:action[id="open-file" label="Action", line=33, path="/path"]
+2. Consectetur adipiscing elit che:action[id="open-file" label="Action", line=33, path="/path"]
+3. Integer molestie lorem at massa che:action[id="open-file" label="Action", line=33, path="/path"]
+
+
+1. You can use sequential numbers che:action[id="open-file" label="Action", line=33, path="/path"]...
+1. ...or keep all the numbers as che:action[id="open-file" label="Action", line=33, path="/path"]  `1.`
+
+Start numbering with offset:
+
+57. foo che:action[id="open-file" label="Action", line=33, path="/path"]
+1. bar che:action[id="open-file" label="Action", line=33, path="/path"]
+
+
+## Code
+
+Inline `code`
+
+Indented code
+
+    // Some comments
+    line 1 of code che:action[id="open-file" label="Action", line=33, path="/path"]
+    line 2 of code
+    line 3 of code
+
+
+Block code &quot;fences&quot;
+
+```
+Sample text here...
+```
+
+Syntax highlighting
+
+``` js
+var foo = function (bar) {
+  return bar++;
+};
+
+console.log(foo(5));
+```
+
+## Tables
+
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. che:action[id="open-file" label="Action", line=33, path="/path"] |
+| engine che:action[id="open-file" label="Action", line=33, path="/path"] | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. che:action[id="open-file" label="Action", line=33, path="/path"] |
+
+Right aligned columns
+
+| Option che:action[id="open-file" label="Action", line=33, path="/path"] | Description  che:action[id="open-file" label="Action", line=33, path="/path"] |
+| ------:| -----------:|
+| data che:action[id="open-file" label="Action", line=33, path="/path"]  | path to data files to supply the data that will be passed into templates. |
+| engine che:action[id="open-file" label="Action", line=33, path="/path"] | engine to be used for processing templates. Handlebars is the default. |
+| ext che:action[id="open-file" label="Action", line=33, path="/path"]  | extension to be used for dest files. |
+
+
+## Links
+
+[link text](http://dev.nodeca.com)  che:action[id="open-file" label="Action", line=33, path="/path"]
+
+[link with title](http://nodeca.github.io/pica/demo/ &quot;title text!&quot;)
+
+Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+
+
+## Images
+
+![Minion](https://octodex.github.com/images/minion.png) che:action[id="open-file" label="Action", line=33, path="/path"]
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg &quot;The Stormtroopocat&quot;)
+
+Like links, Images also have a footnote style syntax
+
+![Alt text][id]
+
+With a reference later in the document defining the URL location:
+
+[id]: https://octodex.github.com/images/dojocat.jpg  &quot;The Dojocat&quot;
+
+
+## Plugins
+
+The killer feature of `markdown-it` is very effective support of
+[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
+
+
+### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
+
+&gt; Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+&gt;
+&gt; Shortcuts (emoticons): :-) :-( 8-) ;)che:action[id="open-file" label="Action", line=33, path="/path"]
+
+see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
+
+
+### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
+
+- 19^th^ che:action[id="open-file" label="Action", line=33, path="/path"]
+- H~2~O
+
+
+### [\&lt;ins che:action[id="open-file" label="Action", line=33, path="/path"] &gt;](https://github.com/markdown-it/markdown-it-ins)
+
+++Inserted text++
+
+
+### [\&lt;mark che:action[id="open-file" label="Action", line=33, path="/path"]&gt;](https://github.com/markdown-it/markdown-it-mark)
+
+==Marked text che:action[id="open-file" label="Action", line=33, path="/path"]==
+
+
+### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
+
+Footnote 1 link[^first] che:action[id="open-file" label="Action", line=33, path="/path"].
+
+Footnote 2 link[^second] che:action[id="open-file" label="Action", line=33, path="/path"].
+
+Inline footnote^[Text of inline footnote] definition.
+
+Duplicated footnote reference[^second].
+
+[^first]: Footnote **can have markup**
+
+    and multiple paragraphs.
+
+[^second]: Footnote text. che:action[id="open-file" label="Action", line=33, path="/path"]
+
+
+### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
+
+Term 1 che:action[id="open-file" label="Action", line=33, path="/path"]
+
+:   Definition 1
+with lazy continuation. che:action[id="open-file" label="Action", line=33, path="/path"]
+
+Term 2 with *inline markup*
+
+:   Definition 2 che:action[id="open-file" label="Action", line=33, path="/path"]
+
+        { some code, part of Definition 2 } che:action[id="open-file" label="Action", line=33, path="/path"]
+
+    Third paragraph of definition 2.
+
+_Compact style:_
+
+Term 1
+  ~ Definition 1 che:action[id="open-file" label="Action", line=33, path="/path"]
+
+Term 2 che:action[id="open-file" label="Action", line=33, path="/path"]
+  ~ Definition 2a che:action[id="open-file" label="Action", line=33, path="/path"]
+  ~ Definition 2b che:action[id="open-file" label="Action", line=33, path="/path"]
+
+
+### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
+
+This is HTML abbreviation example.
+
+It converts &quot;HTML&quot;, but keep intact partial entries like &quot;xxxHTMLyyy&quot; and so on.
+
+*[HTML]: Hyper Text Markup Language
+
+### [Custom containers](https://github.com/markdown-it/markdown-it-container)
+
+::: warning
+*here be dragons* che:action[id="open-file" label="Action", line=33, path="/path"]
+:::
+
+</textarea>
+        </div>
+        <section class="col-xs-6 full-height">
+            <div class="demo-control"><a href="#" data-result-as="html">html</a><a href="#" data-result-as="src">source</a><a href="#" data-result-as="debug">debug</a></div>
+            <div id="result-container" class="result-html full-height"></div>
+            <pre class="hljs result-src full-height"><code class="result-src-content full-height"></code></pre>
+            <pre class="hljs result-debug full-height"><code class="result-debug-content full-height"></code></pre>
+        </section>
+    </div>
+</div>
+</body>
+</html>
