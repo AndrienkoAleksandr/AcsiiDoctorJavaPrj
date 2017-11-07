@@ -2,15 +2,15 @@
 
 function convert() {
     var asciidoctor = Asciidoctor();
-
     asciidoctor.Extensions.register(function () {
-        this.block(function () {
+        this.inlineMacro(function () {
             const self = this;
-            self.named('action');
-            self.onContext('paragraph');
-            self.process(function (parent, reader) {
-                const content = "<input type=\"button\" class=\"quick-guide-action\" value=\"guide che action button\"/>";
-                return self.createBlock(parent, 'pass', [content]);
+            self.named('che');
+            self.process(function (parent, target, properties) {
+                //todo with help target (which is equal to action id) and properties we can create and save IDE action
+                var actionBtnText = Opal.hash_get(properties, "label");
+                //return html action button content
+                return "<input type=\"button\" class=\"quick-guide-action\" value=\"" + actionBtnText + "\"/>";
             });
         });
     });

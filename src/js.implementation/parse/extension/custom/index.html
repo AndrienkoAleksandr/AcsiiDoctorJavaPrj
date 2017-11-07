@@ -17,14 +17,229 @@
         <div class="row full-height">
             <div class="col-xs-6 full-height">
                 <div class="demo-control"><a href="#" class="source-clear">clear</a><a id="permalink" href="./" title="Share this snippet as link"><strong>permalink</strong></a></div>
-                <textarea id="content-widget" class="source full-height">
-   CHE actions syntax inside asciidoc
-   ----------------------------------
+                <textarea id="content-widget" class="source full-height">AsciiDoc Markup Syntax Summary
+==============================
 
-   ~~~Test~~~
-   action:open-file[label="Open some file", line=33, path="/path/to/file"]
+A summary of the most commonly used markup. che:action[id="open-file" label="Action", line=33, path="/path"]
+For a complete reference see the 'AsciiDoc User Guide'.
 
-                </textarea>
+che:action[id="open-file" label="Action", line=33, path="/path"]
+
+Text formatting
+---------------
+*bold che::action[id="open-file" label="Action", line=33, path="/path"] text*                 (boldface font)
+_emphasized che::action[id="open-file" label="Action", line=33, path="/path"] text_           (normally italics)
+'emphasized che::action[id="open-file" label="Action", line=33, path="/path"] text'
++monospaced che::action[id="open-file" label="Action", line=33, path="/path"] text+           (proportional font)
+`monospaced che::action[id="open-file" label="Action", line=33, path="/path"] text`           (inline literal passthrough) che:action[id="open-file" label="Action", line=33, path="/path"]
+
+Document links
+--------------
+[[id]]                      (define link target)
+<<tables, Table Link!!!>>              (link to target id)
+link:index.html#_more_block_elements[Link to the chapter "More block elements"!!!]   (link to external HTML file) che:action[id="open-file" label="Action", line=33, path="/path"]
+
+che:action[id="open-file" label="Action", line=33, path="/path"]
+
+URLs
+----
+Use normal URL and email addess syntax or: https://google.com[google] che:action[id="open-file" label="Action", line=33, path="/path"]
+
+mailto:address[Some email] che:action[id="open-file" label="Action", line=33, path="/path"]
+
+
+Images
+------
+image:acsiidoctor_logo.png[AsciiDoctor logo]
+che:action[id="open-file" label="Action", line=33, path="/path"]
+
+image::acsiidoctor_logo.png[caption]
+
+che:action[id="open-file" label="Action", line=33, path="/path"]
+
+Document header che:action[id="open-file" label="Action", line=33, path="/path"]
+--------------------------------------------------------------------------------
+
+The Document Title che:action[id="open-file" label="Action", line=33, path="/path"]
+===================================================================================
+author <email>
+revision, date
+
+author, email, revision and date are optional.
+
+Section title underlines
+------------------------
+Underlined:
+
+Level 0 che:action[id="open-file" label="Action", line=33, path="/path"] (document title)
+=========================================================================================
+
+Level 1 che:action[id="open-file" label="Action", line=33, path="/path"]
+------------------------------------------------------------------------
+Level 2 che:action[id="open-file" label="Action", line=33, path="/path"]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Level 3 che:action[id="open-file" label="Action", line=33, path="/path"]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Level 4 (bottom level) che:action[id="open-file" label="Action", line=33, path="/path"]
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Single line:
+
+= Level 0 che:action[id="open-file" label="Action", line=33, path="/path"] =                 (document title)
+== Level 1 che:action[id="open-file" label="Action", line=33, path="/path"] ==
+=== Level 2 che:action[id="open-file" label="Action", line=33, path="/path"] ===
+==== Level 3 che:action[id="open-file" label="Action", line=33, path="/path"] ====
+===== Level 4 che:action[id="open-file" label="Action", line=33, path="/path"] =====         (bottom level)
+
+Paragraphs
+----------
+A normal paragraph. che:action[id="open-file" label="Action", line=33, path="/path"]          (styles: literal,verse,quote,listing, NOTE,TIP,WARNING,IMPORTANT,CAUTION)
+
+  An indented literal
+  paragraph.
+
+Delimited blocks che:action[id="open-file" label="Action", line=33, path="/path"]
+---------------------------------------------------------------------------------
+Delimiters must begin at left margin.
+
+------------------------------------------------------------------------------
+listing block: not support che action syntax
+------------------------------------------------------------------------------
+
+.....................................................................
+literal block (styles: listing,verse): not support che action syntax
+.....................................................................
+
+***********************************************************************************
+sidebar block che:action[id="open-file" label="Action", line=33, path="/path"]
+***********************************************************************************
+
+[style, author, cite]
+__________________________________________________________________________________________________
+quote block (styles: quote,verse) che:action[id="open-file" label="Action", line=33, path="/path"]
+__________________________________________________________________________________________________
+
+================================================================
+example block
+che:action[id="open-file" label="Action", line=33, path="/path"]
+(styles: NOTE,TIP,WARNING,IMPORTANT,CAUTION)
+https://google.com[google]
+================================================================
+
+[NOTE]
+================================================================
+example block
+che:action[id="open-file" label="Action", line=33, path="/path"]
+(styles: NOTE,TIP,WARNING,IMPORTANT,CAUTION)
+https://google.com[google]
+================================================================
+
+[CAUTION]
+================================================================
+example block
+che:action[id="open-file" label="Action", line=33, path="/path"]
+(styles: NOTE,TIP,WARNING,IMPORTANT,CAUTION)
+https://google.com[google]
+================================================================
+
+///////////////////
+comment block
+///////////////////
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+passthrough block: not support che action syntax
+(styles: pass,asciimath,latexmath)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[style]
+--
+open block (styles: abstract,partintro) che:action[id="open-file" label="Action", line=33, path="/path"]
+--
+
+More block elements
+-------------------
+[attributes list]
+.Block title Link above really work!!1
+// Comment line
+include::main.js[]
+che:action[id="open-file" label="Action", line=33, path="/path"]
+
+Tables [[tables]]
+-----------------
+.An example table
+[width="40%",cols="^,2m",frame="topbot",options="header,footer"]
+|=============================================================================================================================================
+|Column 1                                                           |Column 2 che:action[id="open-file" label="Action", line=33, path="/path"]
+|1 che:action[id="open-file" label="Action", line=33, path="/path"] |Item 1
+|2                                                                  |Item 2
+|3                                                                  |Item 3
+|6                                                                  |Three items
+|=============================================================================================================================================
+
+  Common table attributes:
+
+  grid:    none,cols,rows,all
+  frame:   topbot,none,sides,all
+  options: header,footer
+  format:  psv,csv,dsv
+  valign:  top,bottom,middle
+  width:   1%..100%
+  cols:    colspec[,colspec,...]
+
+  colspec:    [multiplier*][align][width][style]
+  multiplier: 1...
+  width:      1... or 1%...100%
+  align:      [horiz][.vert]
+               horiz: < (left), ^ (center), > (right)
+               vert:  < (top),  ^ (middle), > (bottom)
+  style:      d[efault], e[mphasis], m[onospaced], a[sciidoc],
+              s[trong], l[iteral], v[erse], h[eader]
+  cell:       [cellspec]|data
+  cellspec:   [span*|+][align][style]
+  span:       [colspan][.rowspan]
+               colspan: 1...
+               rowspan: 1...
+
+Bulleted lists
+--------------
+  - item text che:action[id="open-file" label="Action", line=33, path="/path"]
+  * item text
+  ** item text
+  *** item text
+  **** item text
+  ***** item text che:action[id="open-file" label="Action", line=33, path="/path"]
+
+  (styles: callout,bibliography)
+
+Numbered lists
+--------------
+  1. arabic che:action[id="open-file" label="Action", line=33, path="/path"] (decimal) numbering
+  a. loweralpha numbering
+  F. upperalpha numbering che:action[id="open-file" label="Action", line=33, path="/path"]
+  iii) lowerroman numbering
+  IX) upperroman numbering
+
+  . arabic (decimal) numbering
+  .. loweralpha numbering che:action[id="open-file" label="Action", line=33, path="/path"]
+  ... lowerroman numbering
+  .... upperalpha numbering
+  ..... upperroman numbering che:action[id="open-file" label="Action", line=33, path="/path"]
+
+  (styles: arabic,loweralpha,upperalpha,lowerroman,upperroman)
+
+Labeled lists
+-------------
+  label:: item text che:action[id="open-file" label="Action", line=33, path="/path"]
+  label che:action[id="open-file" label="Action", line=33, path="/path"];; item text
+  label::: item text che:action[id="open-file" label="Action", line=33, path="/path"]
+  label:::: item text che:action[id="open-file" label="Action", line=33, path="/path"]
+
+  (styles: horizontal,vertical,glossary,qanda,bibliograpy)
+
+More inline elements
+--------------------
+footnote:[footnote text]    (document footnote) che:action[id="open-file" label="Action", line=33, path="/path"]
+</textarea>
             </div>
             <section class="col-xs-6 full-height">
                 <div class="demo-control"><a href="#" data-result-as="html">html</a><a href="#" data-result-as="src">source</a><a href="#" data-result-as="debug">debug</a></div>
