@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: AcsiiDoctorJavaPrj
+  annotations:
+    github.com/project-slug: AndrienkoAleksandr/AcsiiDoctorJavaPrj
+spec:
+  type: other
+  lifecycle: unknown
+  owner: user:development/guest
